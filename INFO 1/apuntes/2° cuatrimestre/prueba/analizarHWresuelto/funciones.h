@@ -1,0 +1,1 @@
+int valorAnalizado(int* v);

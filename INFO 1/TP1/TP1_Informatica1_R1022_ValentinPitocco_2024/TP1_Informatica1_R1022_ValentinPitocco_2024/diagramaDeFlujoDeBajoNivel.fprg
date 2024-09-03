@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Valentin Pitocco"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-25 11:01:38 p.&#160;m."/>
+        <attribute name="created" value="VmFsZW50aW4gUGl0b2NjbztERVNLVE9QLUNNVkhPTzc7MjAyNC0wNS0yNDswMzowNzowOCBwLsKgbS47NDI4MQ=="/>
+        <attribute name="edited" value="VmFsZW50aW4gUGl0b2NjbztERVNLVE9QLUNNVkhPTzc7MjAyNC0wNS0yNTsxMTowMTozOCBwLsKgbS47OTs0Mzk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="estado" type="Integer" array="False" size=""/>
+            <assign variable="estado" expression="0"/>
+            <declare name="venta" type="Integer" array="False" size=""/>
+            <assign variable="venta" expression="0"/>
+            <declare name="botinesHombre" type="Integer" array="False" size=""/>
+            <assign variable="botinesHombre" expression="0"/>
+            <declare name="botinesMujer" type="Integer" array="False" size=""/>
+            <assign variable="botinesMujer" expression="0"/>
+            <declare name="zapatillasUnisex" type="Integer" array="False" size=""/>
+            <assign variable="zapatillasUnisex" expression="0"/>
+            <declare name="medias" type="Integer" array="False" size=""/>
+            <assign variable="medias" expression="0"/>
+            <declare name="comisionVendedor1" type="Real" array="False" size=""/>
+            <assign variable="comisionVendedor1" expression="0.0"/>
+            <declare name="comisionVendedor2" type="Real" array="False" size=""/>
+            <assign variable="comisionVendedor2" expression="0.0"/>
+            <declare name="comisionVendedor3" type="Real" array="False" size=""/>
+            <assign variable="comisionVendedor3" expression="0.0"/>
+            <declare name="codigoVendedor" type="Integer" array="False" size=""/>
+            <assign variable="codigoVendedor" expression="0"/>
+            <declare name="totalVendedor1" type="Real" array="False" size=""/>
+            <assign variable="totalVendedor1" expression="0.0"/>
+            <declare name="totalVendedor2" type="Real" array="False" size=""/>
+            <assign variable="totalVendedor2" expression="0.0"/>
+            <declare name="totalVendedor3" type="Real" array="False" size=""/>
+            <assign variable="totalVendedor3" expression="0.0"/>
+            <declare name="precioBotines" type="Integer" array="False" size=""/>
+            <assign variable="precioBotines" expression="60000"/>
+            <declare name="precioZapatillas" type="Integer" array="False" size=""/>
+            <assign variable="precioZapatillas" expression="86000"/>
+            <declare name="precioMedias" type="Integer" array="False" size=""/>
+            <assign variable="precioMedias" expression="2500"/>
+            <declare name="cantidad" type="Integer" array="False" size=""/>
+            <assign variable="cantidad" expression="0"/>
+            <declare name="precio" type="Real" array="False" size=""/>
+            <assign variable="precio" expression="0.0"/>
+            <declare name="facturacion" type="Real" array="False" size=""/>
+            <assign variable="facturacion" expression="0.0"/>
+            <declare name="lectura" type="Integer" array="False" size=""/>
+            <declare name="on" type="Integer" array="False" size=""/>
+            <assign variable="on" expression="1"/>
+            <while expression="on == 1">
+                <if expression="estado == 0">
+                    <then>
+                        <do expression="lectura != 1 &amp;&amp; lectura != 2 &amp;&amp; lectura != 3 &amp;&amp; lectura != 4">
+                            <output expression="&quot;Sistema de ventas Nike S.R.L&quot;" newline="True"/>
+                            <output expression="&quot;1. Nueva Venta&quot;" newline="True"/>
+                            <output expression="&quot;2. Resumen de ventas&quot;" newline="True"/>
+                            <output expression="&quot;3. Comisiones&quot;" newline="True"/>
+                            <output expression="&quot;4. Salir&quot;" newline="True"/>
+                            <input variable="lectura"/>
+                            <if expression="lectura == 1">
+                                <then>
+                                    <assign variable="estado" expression="1"/>
+                                </then>
+                                <else>
+                                    <if expression="lectura == 2">
+                                        <then>
+                                            <assign variable="estado" expression="2"/>
+                                        </then>
+                                        <else>
+                                            <if expression="lectura == 3">
+                                                <then>
+                                                    <assign variable="estado" expression="3"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="lectura == 4">
+                                                        <then>
+                                                            <assign variable="estado" expression="4"/>
+                                                        </then>
+                                                        <else/>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                            <if expression="lectura != 1 &amp;&amp; lectura!= 2 &amp;&amp; lectura != 3 &amp;&amp; lectura != 4">
+                                <then>
+                                    <output expression="&quot;Codigo inexistente, vuelva a ingresar el codigo&quot;" newline="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </do>
+                    </then>
+                    <else>
+                        <if expression="estado == 1">
+                            <then>
+                                <output expression="&quot;1. Botines hombre&quot;" newline="True"/>
+                                <output expression="&quot;2. Botines mujer&quot;" newline="True"/>
+                                <output expression="&quot;3. Zapatillas Unisex&quot;" newline="True"/>
+                                <output expression="&quot;4. Medias&quot;" newline="True"/>
+                                <output expression="&quot;5. Volver&quot;" newline="True"/>
+                                <input variable="venta"/>
+                                <if expression="venta == 1 || venta == 2 || venta == 3 || venta == 4">
+                                    <then>
+                                        <output expression="&quot;Ingrese su codigo de vendedor:&quot;" newline="True"/>
+                                        <input variable="codigoVendedor"/>
+                                        <while expression="codigoVendedor != 1 &amp;&amp; codigoVendedor != 2 &amp;&amp; codigoVendedor != 3">
+                                            <output expression="&quot;Vendedor inexistente, vuelva a ingresar su codigo:&quot;" newline="True"/>
+                                            <input variable="codigoVendedor"/>
+                                        </while>
+                                    </then>
+                                    <else>
+                                        <if expression="venta == 5">
+                                            <then>
+                                                <output expression="&quot;Volviendo...&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Codigo inexistente, volviendo...&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                        <assign variable="estado" expression="0"/>
+                                        <assign variable="venta" expression="0"/>
+                                        <assign variable="cantidad" expression="0"/>
+                                        <assign variable="codigoVendedor" expression="0"/>
+                                    </else>
+                                </if>
+                                <if expression="codigoVendedor == 1 || codigoVendedor == 2 || codigoVendedor == 3">
+                                    <then>
+                                        <output expression="&quot;Ingrese el precio del producto:&quot;" newline="True"/>
+                                        <input variable="precio"/>
+                                        <if expression="0 &gt; precio">
+                                            <then>
+                                                <output expression="&quot;No puede ser un precio negativo, vuelva a ingresar el precio:&quot;" newline="True"/>
+                                                <input variable="precio"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                        <output expression="&quot;Ingrese la cantidad de productos que a vendido:&quot;" newline="True"/>
+                                        <input variable="cantidad"/>
+                                        <if expression="cantidad &gt; 0">
+                                            <then>
+                                                <if expression="codigoVendedor == 1">
+                                                    <then>
+                                                        <assign variable="totalVendedor1" expression="totalVendedor1 + precio*cantidad"/>
+                                                        <assign variable="comisionVendedor1" expression="totalVendedor1/100"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="codigoVendedor == 2">
+                                                            <then>
+                                                                <assign variable="totalVendedor2" expression="totalVendedor2 + precio*cantidad"/>
+                                                                <assign variable="comisionVendedor2" expression="totalVendedor2/100"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="codigoVendedor == 3">
+                                                                    <then>
+                                                                        <assign variable="totalVendedor3" expression="totalVendedor3 + precio*cantidad"/>
+                                                                        <assign variable="comisionVendedor3" expression="totalVendedor3/100"/>
+                                                                    </then>
+                                                                    <else/>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                                <if expression="venta == 1">
+                                                    <then>
+                                                        <assign variable="botinesHombre" expression="botinesHombre + cantidad"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="venta == 2">
+                                                            <then>
+                                                                <assign variable="botinesMujer" expression="botinesMujer + cantidad"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="venta == 3">
+                                                                    <then>
+                                                                        <assign variable="zapatillasUnisex" expression="zapatillasUnisex + cantidad"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="venta == 4">
+                                                                            <then>
+                                                                                <assign variable="medias" expression="medias + cantidad"/>
+                                                                            </then>
+                                                                            <else/>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                                <assign variable="cantidad" expression="0"/>
+                                                <assign variable="venta" expression="0"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="estado" expression="5"/>
+                                                <assign variable="facturacion" expression="totalVendedor1 + totalVendedor2 + totalVendedor3"/>
+                                                <output expression="&quot;Facturacion del dia:&quot;" newline="True"/>
+                                                <output expression="&quot;Vendedor 1:&quot;" newline="True"/>
+                                                <output expression="&quot;Vendedor 2:&quot;" newline="True"/>
+                                                <output expression="&quot;Vendedor 3:&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="estado == 2">
+                                    <then>
+                                        <output expression="&quot;Cantidades vendidas:&quot;" newline="True"/>
+                                        <output expression="&quot;Botines hombre: &quot;" newline="True"/>
+                                        <output expression="botinesHombre" newline="True"/>
+                                        <output expression="&quot;Botines mujer: &quot;" newline="True"/>
+                                        <output expression="botinesMujer" newline="True"/>
+                                        <output expression="&quot;Zapatillas unisex: &quot;" newline="True"/>
+                                        <output expression="zapatillasUnisex" newline="True"/>
+                                        <output expression="&quot;Medias: &quot;" newline="True"/>
+                                        <output expression="medias" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="estado == 3">
+                                            <then>
+                                                <output expression="&quot;Comision vendedor 1: &quot;" newline="True"/>
+                                                <output expression="comisionVendedor1" newline="True"/>
+                                                <output expression="&quot;Comision vendedor 2: &quot;" newline="True"/>
+                                                <output expression="comisionVendedor2" newline="True"/>
+                                                <output expression="&quot;Comision vendedor 3: &quot;" newline="True"/>
+                                                <output expression="comisionVendedor3" newline="True"/>
+                                                <assign variable="estado" expression="0"/>
+                                            </then>
+                                            <else>
+                                                <if expression="estado == 4">
+                                                    <then>
+                                                        <assign variable="facturacion" expression="totalVendedor1 + totalVendedor2 + totalVendedor3"/>
+                                                        <output expression="&quot;Facturacion del dia:&quot;" newline="True"/>
+                                                        <output expression="&quot;Comision vendedor 1: &quot;" newline="True"/>
+                                                        <output expression="comisionVendedor1" newline="True"/>
+                                                        <output expression="&quot;Comision vendedor 2: &quot;" newline="True"/>
+                                                        <output expression="comisionVendedor2" newline="True"/>
+                                                        <output expression="&quot;Comision vendedor 3: &quot;" newline="True"/>
+                                                        <output expression="comisionVendedor3" newline="True"/>
+                                                        <assign variable="on" expression="0"/>
+                                                    </then>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

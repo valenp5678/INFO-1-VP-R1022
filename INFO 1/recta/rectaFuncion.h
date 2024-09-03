@@ -1,0 +1,1 @@
+int recta(int a, int x, int b);

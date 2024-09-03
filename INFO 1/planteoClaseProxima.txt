@@ -1,0 +1,7 @@
+1) Crear un programa que determine con funciones si un triangulo es:
+Isosceles, Escaleno o Equilatero y si es Isosceles determinen si es rectangulo
+
+2) Crear una funcion que ingrese una funcion cuadratica, y a la salida nos
+indique si f(x) tiene 0, 1 o 2 raices. (funcion discriminante)
+
+

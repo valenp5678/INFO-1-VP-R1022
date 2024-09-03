@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1724766719 source:c:\users\valentin pitocco\documents\mint folder\info 1\apuntes\2° cuatrimestre\prueba\int_bin\funciones.c
+	"funciones.h"
+	<stdio.h>
+
+1724766783 c:\users\valentin pitocco\documents\mint folder\info 1\apuntes\2° cuatrimestre\prueba\int_bin\funciones.h
+
+1724766767 source:c:\users\valentin pitocco\documents\mint folder\info 1\apuntes\2° cuatrimestre\prueba\int_bin\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+

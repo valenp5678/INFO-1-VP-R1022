@@ -1,0 +1,1 @@
+char triangulo(float lado1, float lado2, float lado3);
